@@ -1,5 +1,52 @@
+<!DOCTYPE html>
 <html>
-<head>Hello World</head>
+  <head>
+    <link rel="stylesheet" href="css\styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+    ></script>
+    <script>
+        function hideLoader() {
+          $('#loader').hide();
+      }
 
+      $(window).ready(hideLoader);
+
+      setTimeout(hideLoader, 20 * 1000);
+
+    </script>
+  </head>
+  <body>
+    <div id="loader"></div>
+    <div id="content">
+      <header>
+        <a href="#" class="logo"><img src="logo.png" /></a>
+        <ul class="nav">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <button class="menubutton">
+          <ion-icon class="bars" name="menu-outline"></ion-icon>
+        </button>
+      </header>
+      <div class="banner">
+        <img src="background.jpg" class="background" />
+      </div>
+    </div>
+    <!-- <script>
+        var preloader = document.getElementById('loader');
+        function preLoaderHandler(){
+            preloader.style.display = 'fast';
+        }
+      </script> -->
+  </body>
 </html>
-
