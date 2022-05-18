@@ -2,143 +2,147 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 
-}
+} 
 
- header {
-    position: fixed;
+
+header {
+    position: absolute;
     top: 0;
     left: 0;
-    width: auto;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 100px;
-    z-index: 100;
 }
 
-.sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    margin: 0 10px;
-    background-color: black; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  }
-
-.sidebar a{
-    padding: 8px 8px 8px 32px;
+header .logo {
+    position: relative;
+    font-size: 2em;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 700;
     text-decoration: none;
-    font-size: 15px;
-    color: white;
-    display: block;
-    transition: 0.3s;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    transition: 0.5s;
+    background: #8EC4D0;
+    padding: 2px 5px;
 }
 
-.sidebar a i {
+header .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url(/images/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 30px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    color: white ;
-
-}
-.sidebar a i:hover {
-    color: #8EC4D0;
 }
 
-.sidebar a:hover {
-    color: #8EC4D0;
-}
-.sidebar .closebtn {
+header .toggle:before {
+    content: "Menu";
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    right: 45px;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 2px;
+    font-size: 14px;
+    padding: 2px 5px;
+    background: #8EC4D0;
+    color: #111;
+
 }
 
-.openbtn {
-    font-size: 20px;
+header .toggle.active {
+    background: url(/images/close.png);
+    background-position: center;
+    background-repeat: no-repeat;
     cursor: pointer;
-    background-color: black;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    position: fixed;
-    top: 0;
-    z-index: 9999999;
+    background-size: 25px;
 }
 
-.openbtn:hover{
-    background-color: #8EC4D0;
+header .toggle.active:before {
+    content: "Close";
 }
 
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
-
-
-/* .nav a {
-    list-style: none;
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 4px ;
-    font-style: bold;
-    font-size: small;
-
-}
-
-.nav a:hover {
-    color: #8EC4D0;
-}
-
-.menubutton {
-    color: rgb(44, 41, 41);
-    font-size: 1px;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    display: none;
-} */
-/* background section */
-
-/* loading screen section */
-#loader {
-    /* position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: black url("https://cssauthor.com/wp-content/uploads/2018/06/Bouncy-Preloader.gif");
-    z-index: 999; */
-    background:black url("/Loading.gif.gif") no-repeat center center;
-    background-size: 350px;
+.glass {
     position: absolute;
     top: 0;
     left: 0;
+    width: 0%;
     height: 100%;
+    backdrop-filter: blur(15px);
+    z-index: 10;
+    box-shadow: 10px 015px rgba(0,0,0,0.1);
+    transition: 1s;
+}
+section.active .glass {
     width: 100%;
-    z-index: 9999999;
+    backdrop-filter: blur(20px);
+    transition-delay: 0s;
+    
+
 }
 
+section .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: 0.5s;
+    transition-delay: 1s;
+    margin-top: 18%;
+ 
+}
+
+section.active .content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-200px);
+    transition-delay: 0s;
+} 
+section .content h2 {
+    position: relative;
+    color: #fff;
+    font-size: 10vw;
+    line-height: 0.55em;
+    text-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+section .content h2 span {
+    font-size:0.2em ;
+    font-weight: 300;
+    letter-spacing: 5px;
+    background: #fff;
+    color: #111;
+    padding: 0 10px;
+    text-shadow: 0 5px 5px rgba(0,0,0,0);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    text-transform: uppercase;
+}
 section {
     position: relative;
     width: 100%;
     height: 100vh;
     background: #111;
-    display: flex;
+    display: fixed;
     flex-direction: column;
     overflow: hidden;
+    object-fit: cover;
 }
 
 section .row {
     position: relative;
-    top:-60%;
+    top:-120%;
     width: 100%;
     display: flex;
     padding: 10px 0;
@@ -217,4 +221,86 @@ section .row:nth-child(even) div:nth-child(2) {
         transform: translateX(0%);
     }
 }
- 
+
+section .social {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+    display: flex;
+    z-index: 100;
+}
+section .social li {
+    list-style: none;
+    margin: 5px;
+    padding: 0 6px;
+    background: #fff;
+    transition: 0.5s;
+    transition-delay: calc(0.2s * var(--i));
+
+}
+
+section.active .social li {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+}
+
+section .social li a {
+    color: #111;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+section .nav {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+
+}
+
+section .nav li {
+    list-style: none;
+    text-align: center;
+    margin: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: translateX(200px);
+    transition-delay: calc(0.2s * var(--i));
+}
+
+section.active .nav li {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(200px);
+}
+
+section .nav li a {
+    color: #111;
+    font-size: 1.5em;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    background:#fff;
+    padding: 4px 10px;
+    display: inline-block;
+}
+
+section .nav li a:hover {
+    background: #111;
+    color: #fff;
+    letter-spacing: 10px;
+    text-transform: lowercase;
+}
+
+
+
+
+
