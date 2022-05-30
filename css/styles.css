@@ -9,7 +9,9 @@
 
 body, html {
     height: 100%;
+    box-sizing: border-box;
 }
+
 
 header {
     position: absolute;
@@ -32,7 +34,7 @@ header .logo {
     text-decoration: none;
     text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
     transition: 0.5s;
-    background: #8EC4D0;
+    background:  #39FF14;
     padding: 2px 5px;
     letter-spacing: 2px;
 }
@@ -68,7 +70,7 @@ header .toggle:before {
     letter-spacing: 2px;
     font-size: 14px;
     padding: 2px 5px;
-    background: #8EC4D0;
+    background:  #39FF14;
     color: #111;
 
 }
@@ -122,10 +124,11 @@ section.active .content {
 } 
 section .content h2 {
     position: relative;
-    color: black;
+    color: white;
     font-size: 10vw;
     line-height: 0.55em;
-    text-shadow: 0 5px 5px rgba(109, 9, 9, 0.699);
+    text-shadow: 0 5px 5px  #39FF14;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
     text-align: center;
 }
 
@@ -133,7 +136,7 @@ section .content h2 span {
     font-size:0.2em ;
     font-weight: 300;
     letter-spacing: 5px;
-    background: #8EC4D0;
+    background:  #39FF14;
     color: #111;
     padding: 0 10px;
     text-shadow: 0 5px 5px rgba(0,0,0,0);
@@ -145,7 +148,7 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: white;
+    background: black;
     display: fixed;
     flex-direction: column;
     overflow: hidden;
@@ -164,7 +167,7 @@ section .row {
 }
 
 i {
-    color: rgb(0,0,0,0.5);
+    color: lightgrey;
     transition: 1s;
     padding: 0 5px;
     user-select: none;
@@ -174,8 +177,8 @@ i {
 }
 i:hover {
     transition: 0s;
-    color: #8EC4D0;
-    text-shadow: 0 0 120px #8EC4D0;
+    color:  #39FF14;
+    text-shadow: 0 0 120px  #39FF14;
 }
 
 section .row div {
@@ -245,7 +248,7 @@ section .social li {
     list-style: none;
     margin: 5px;
     padding: 0 6px;
-    background: #8EC4D0;
+    background:  #39FF14;
     transition: 0.5s;
     transition-delay: calc(0.2s * var(--i));
 
@@ -307,23 +310,30 @@ section .nav li a {
 
 section .nav li a:hover {
 
-    color: #fff;
+    color:  #39FF14;
     letter-spacing: 10px;
     text-transform: lowercase;
 }
 
+@media only screen and (max-width:660px) {
+    section.active .nav li {
+        position: relative;
+        right: 140px;
+    }
 
-p {
+
+}
+
+.aboutMe p {
     max-width: 600px;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 
-
-
 .aboutMe {
-    /* max-width: 1100px; */
     margin: 0 auto;
-    padding: 24px;
+    padding: 100px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
@@ -338,7 +348,6 @@ p {
 
 .profilePic {
     grid-column: 1/5;
-
     display: flex;
     justify-content: center;
 }
@@ -347,7 +356,7 @@ p {
     border-radius: 50%;
     width: 90%;
     border: 10px solid;
-    border-color: #8EC4D0;
+    border-color:  #39FF14;
     
 }
 
@@ -366,21 +375,22 @@ p {
     font-size: 24px;
     font-weight: 700;
     margin: 0;
+    padding-bottom: 15px;
 }
 
 .panel-subheading {
     margin: 0;
-    font-size: 12px;
-    color: #8EC4D0;
+    font-size: 15px;
+    color: #39FF14;
 }
 
-button {
+.panel button {
     display: button;
     margin: 0 auto;
     border: none;
     padding: 10px 24px;
     color: white;
-    background-color: #8EC4D0;
+    background-color: black;
     border: 8px;
 }
 
@@ -395,57 +405,252 @@ button {
 }
 
 
-.projects {
-    background: white;
-    padding: 100px;
-    text-align: center;
-    
-
-}
-
-
-.projects .imageContainers {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 60px;
-
-}
-
-.projects .imageContainers .projectBox {
+.projectContainer {
     position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: minmax(100px,auto);
+    grid-auto-flow: dense;
+    gap: 10px;
     background: black;
-    width: 350px;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3%;
-    margin-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.projects .imageContainers .projectBox img {
-    width: 100px;
+.projectContainer .box {
+    background: white;
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    place-items: center;
+    text-align: center;
+    color: black;
+    transition: 0.5s;
+    border-radius: 10px;
+    box-shadow: #39FF14;
 }
 
-.projects .imageContainers .projectBox:hover {
-    opacity: 100;
-    background-color: #8EC4D0;
+.projectContainer .box:hover {
+    background: #39FF14 !important;
+} 
+
+.projectContainer .box img {
+    position: relative;
+    max-width: 100px;
+    margin-bottom: 10px;
 }
 
-@media screen and (max-width: 500px) {
-    .projectBox {
-      width: 100%;
-    }
+.projectContainer .box:nth-child(1){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.projectContainer .moreContent {
+    opacity: 0;
+    display: none;
+    font-size: 40px;
+    top: 0;
+    left: 0;
+
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    -ms-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    text-align: center;
+  }
+
+  .projectContainer .moreContent:hover {
+    opacity: 1;
+    display: block;
+  }
+  .box .moreContent .text {
+    height: 0;
+    opacity: 1;
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+  }
+  .box .moreContent:hover .text {
+    opacity: 1;
+    transform: translateY(250px);
+    -webkit-transform: translateY(250px);
   }
 
 
+@media (max-width: 991px){
+    .projectContainer {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        grid-template-rows: minmax(auto,auto);
+   
+    }
+    .projectContainer .box {
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
 
 
 
 
 
 
+.skillsContainer {
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: minmax(100px,auto);
+    grid-auto-flow: dense;
+    gap: 10px;
+    background: black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+.skillsContainer .box {
+    background: white;
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    place-items: center;
+    text-align: center;
+    color: black;
+    transition: 0.5s;
+    border-radius: 10px;
+    box-shadow: #39FF14;
+}
+
+.skillsContainer .box:hover {
+    background: #39FF14;
+} 
+
+.skillsContainer .box img {
+    position: relative;
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.skillsContainer .box:nth-child(1){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+
+@media (max-width: 991px){
+    .skillsContainer {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        grid-template-rows: minmax(auto,auto);
+   
+    }
+    .skillsContainer .box {
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
+
+.contain {
+    max-width: auto;
+    height: 100%;
+    padding: 1em;
+    background: #000;
+  }
+  @media (min-width: 600px) {
+    .contain {
+      padding: 0;
+    }
+  }
+  
+  h3,
+  ul {
+    margin: 0;
+  }
+  
+  h3 {
+    margin-bottom: 1rem;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: 3px solid #39FF14;
+  }
+  
+  input,
+  textarea,
+  button {
+    width: 100%;
+    border: 1px solid #000;
+  }
+  
+  .wrapper {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    height: 100%;
+  }
+  .wrapper > * {
+    padding: 1em;
+  }
+  @media (min-width: 700px) {
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    .wrapper > * {
+      padding: 2em 2em;
+    }
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contacts {
+    background: #39FF14;
+    color: #fff;
+  }
+  
+  .form {
+    background: black;
+    color: white;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  form label {
+    display: block;
+  }
+  form p {
+    margin: 0;
+  }
+  
+  .full-width {
+    grid-column: 1 / 3;
+  }
+  
+  button ,
+  input,
+  textarea{
+    padding: 1em;
+  }
+  
+  button {
+    background: white;
+    width: 100%;
+    border: 0;
+    color: #000;
+  }
+  button:hover, button:focus {
+    background: #39FF14;
+    outline: 0;
+  }
