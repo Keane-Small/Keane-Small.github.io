@@ -687,6 +687,24 @@
         <li style="--i:5;"><a href="#contactMe">Contact</a></li>
       </ul>
     </section>
+    <button onclick="topFunction()" id="myBtn" class="topButton" title="Go to top"></button>
+    <script>
+      var mybutton = document.getElementById("myBtn");
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+    
     <script type="text/javascript">
       function menuToggle(){
         const toggleMenu = document.querySelector(".toggle");
@@ -842,7 +860,7 @@
     </div>
 
     <div class="form">
-      <h3>Send us a message</h3>
+      <h3>Send me a message</h3>
       <form action="">
         <p>
           <label for="">Your name</label>
@@ -865,7 +883,7 @@
           <textarea name="" id="" cols="30" rows="7"></textarea>
         </p>
         <p class="full-width">
-          <button>Send</button>
+          <button class="sendButton">Send</button>
         </p>
       </form>
     </div>
