@@ -482,7 +482,6 @@ section .nav li a:hover {
     font-size: 40px;
     top: 0;
     left: 0;
-
     -webkit-transition: all 400ms ease-out;
     -moz-transition: all 400ms ease-out;
     -o-transition: all 400ms ease-out;
@@ -650,6 +649,26 @@ section .nav li a:hover {
   .contacts {
     background: #39FF14;
     color: #fff;
+  }
+
+  .contacts li {
+      padding-bottom: 10px;
+    list-style: none;
+    background:  #39FF14;
+    transition: 0.5s;
+    transition-delay: calc(0.2s * var(--i));
+  }
+
+  .contacts li a {
+    padding: 8px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
   }
   
   .form {
