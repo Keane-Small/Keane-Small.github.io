@@ -364,7 +364,7 @@ section .nav li a:hover {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
-    height: 100%;
+    height: auto;
     align-items: center;
     background-image: url(/images/Untitled\ design.png);
     background-repeat: none;
@@ -427,7 +427,10 @@ section .nav li a:hover {
     }
 
     .bio-container {
-        grid-column: 1 / span 12;
+        grid-column: 2 / span 12;
+        align-items: center;
+        bottom: 300px;
+        
     }
 }
 
@@ -659,16 +662,32 @@ section .nav li a:hover {
     transition-delay: calc(0.2s * var(--i));
   }
 
-  .contacts li a {
+
+  .contacts li div {
     padding: 8px;
     background-color: black;
-    color: white;
-    text-decoration: none;
+    
     display: inline-block;
+    
+    
+  }
+  .contacts li div a {
+    float: right;
+    margin-left: 5px;
+    margin-top: 3px;
+    text-align: right;
     letter-spacing: 2px;
     font-weight: 500;
     font-size: 12px;
     text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+  }
+  .contacts li div img {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-color: white;
   }
   
   .form {
