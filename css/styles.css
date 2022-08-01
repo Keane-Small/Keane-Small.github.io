@@ -25,19 +25,7 @@ header {
     align-items: center;
 }
 
-header .logo {
-    position: relative;
-    font-size: 14px;
-    color: black;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-decoration: none;
-    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
-    transition: 0.5s;
-    background:linear-gradient(315deg, #03a9f4, #ff0058);
-    padding: 2px 5px;
-    letter-spacing: 2px;
-}
+
 
 @media screen and (max-width: 400px) {
     .logo {
@@ -58,6 +46,7 @@ header .toggle {
     display: flex;
     justify-content: center;
     align-items: center;
+    left:99%;
 }
 
 
@@ -298,13 +287,15 @@ section .nav li a:hover {
     z-index: 99; 
     border: none; 
     outline: none; 
-    background-color: #39FF14;
+    background-color: #ff0058;
+    border-color: #03a9f4;
+    border: solid;
     background-image: url(/images/arrow-up-solid.svg);
     background-position: center;
     background-repeat: no-repeat; 
     color: black; 
     cursor: pointer; 
-    padding: 15px; 
+    padding: 20px; 
     border-radius: 8px; 
     font-size: 18px; 
   }
@@ -412,6 +403,9 @@ section .nav li a:hover {
         grid-column: 1 / span 12;
         bottom: 300px;
     }
+    header .toggle {
+      left:60%;
+  }
 
 }
 
@@ -599,6 +593,7 @@ section .nav li a:hover {
 .container .box:hover .content
 {
   left: -25px;
+  top: -25px;
   padding: 60px 40px;
 }
 
@@ -821,7 +816,7 @@ section .nav li a:hover {
 
 .skills-container .skills-box:hover .skills-content
 {
-  left: -25px;
+  left:-25px;
 }
 
 .skills-container .skills-box .skills-content h2
@@ -893,7 +888,8 @@ section .nav li a:hover {
   }
 
   .contain {
-    background: linear-gradient(to bottom, #03a9f4, #ff0058)
+    background: linear-gradient(to bottom, #03a9f4, #ff0058);
+    padding-bottom: 20px;
   }
 
 
