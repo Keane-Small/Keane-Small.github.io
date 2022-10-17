@@ -721,6 +721,18 @@ section .nav li a:hover {
   background: linear-gradient(315deg, #4dff03, #00d0ff)
 }
 
+.skills-container .skills-box:nth-child(4):before,
+.skills-container .skills-box:nth-child(4):after
+{
+  background: linear-gradient(315deg, #4dff03, #00d0ff)
+}
+
+.skills-container .skills-box:nth-child(5):before,
+.skills-container .skills-box:nth-child(5):after
+{
+  background: linear-gradient(315deg, #03a9f4, #ff0058)
+}
+
 .skills-container .skills-box span
 {
   display: block;
