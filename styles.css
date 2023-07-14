@@ -14,7 +14,7 @@ body, html {
 
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -78,7 +78,7 @@ header .toggle.active:before {
 }
 
 .glass {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 0%;
@@ -228,7 +228,7 @@ section .row:nth-child(even) div:nth-child(2) {
 
 
 section .nav {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translate(-50%,-50%);
     z-index: 100;
