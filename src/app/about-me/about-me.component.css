@@ -1,0 +1,68 @@
+.row {
+  padding-top: 52px;
+  padding-bottom: 52px;
+  max-width: 100%;
+}
+.curved-box {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center vertically */
+  text-align: left; 
+  color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 100%
+}
+
+
+.space-between {
+    margin-right: 20px; /* Space between the boxes */
+}
+
+.profile-circle {
+    width: 100%; /* Size of the circle */
+    height: 100%;
+    overflow: hidden; /* Ensures the image stays within the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+  
+}
+.profile-circle img {
+    width: 100%; /* Ensures the image fills the circle */
+    height: auto;
+    max-width: 100%
+}
+
+
+/* New border style test */
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #ff6b6b, #f7b731);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  max-width: 40%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none
+}
+
+.button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Button lifts slightly when hovered */
+}
+
+   .gradient-text {
+      background: linear-gradient(45deg, #ff6b6b, #f7b731, #48dbfb);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: bold;
+    }

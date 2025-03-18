@@ -1,0 +1,121 @@
+.row {
+
+  max-width: 100%;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    overflow: hidden; /* Ensures content stays within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    width: 18rem; /* Fixed width for the card */
+    position: relative; /* For positioning the image and card body */
+    max-width: 100%
+}
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+.card .card-img-top {
+    width: 100%; /* Ensures the image spans the entire width */
+    height: 300px; /* Fixed height for the image */
+    object-fit: cover; /* Ensures the image covers the entire space */
+    border-radius: 16px 16px 0 0; /* Rounded top corners */
+    max-width: 100%
+}
+.project-card .card-body {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    position: absolute; /* Positions the card body over the image */
+    bottom: 0; /* Aligns the card body to the bottom */
+    left: 0;
+    right: 0;
+}
+.card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.card .card-text {
+    font-size: 1rem;
+    color: white;
+}
+
+  
+ /* Make sure the background covers the whole viewport */
+
+ .gradient-line {
+  display: inline-block;
+  position: relative;
+  font-size: 36px; /* Adjust the font size */
+}
+
+h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text inside */
+  
+}
+
+h5 {
+  color: white;
+  
+}
+
+
+
+.gradient-line::after {
+  content: '';
+  position: absolute;
+  bottom: -15px; /* Adjust the space between text and the line */
+  left: 50%; /* Center the line horizontally */
+  transform: translateX(-50%); /* Ensure proper centering by adjusting the line */
+  width: 20%; /* Make the line span the full width of the text */
+  height: 1px; /* Height of the gradient line */
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient colors */
+}
+
+
+  .rgbborder-container {
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: rotate-border 5s infinite linear, rgb-border 5s infinite linear;
+    border-radius: 16px;
+  }
+
+  /* Create the RGB border animation */
+  @keyframes rgb-border {
+    0% {
+      border: 1px solid  #ff6b6b;
+      box-shadow: 0 0 10px #f7b731;
+    }
+    25% {
+      border: 1px solid #f7b731;
+      box-shadow: 0 0 10px #ff6b6b;
+    }
+    50% {
+      border: 1px solid  #ff6b6b;
+      box-shadow: 0 0 10px #f7b731;
+    }
+    75% {
+      border: 1px solid #f7b731;
+      box-shadow: 0 0 10px #ff6b6b;
+    }
+    100% {
+      border: 1px solid  #ff6b6b;
+      box-shadow: 0 0 10px #f7b731;
+    }
+  }
+
+  .btn{
+    color:white;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+  }
+
+  
+  
+ 
+  
+  
