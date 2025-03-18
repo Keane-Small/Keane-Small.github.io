@@ -1,0 +1,19 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+.navbar a { 
+ align-items: center;
+ justify-content: center;
+    display: flex;
+    
+}
+.navbar a.active {
+  background: linear-gradient(45deg, #ff6b6b, #f7b731);
+  color: white;  /* Change text color when active */
+}
+
+
+  
+  

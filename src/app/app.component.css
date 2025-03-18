@@ -1,0 +1,35 @@
+
+
+  /* Create the moving particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    animation: moveParticles 4s infinite ease-in-out;
+  }
+
+  /* Randomize movement of particles */
+  @keyframes moveParticles {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      opacity: 1;
+      transform: translate3d(calc(100vw * (rand(1) - 0.5)), calc(100vh * (rand(1) - 0.5)), 0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate3d(calc(100vw * (rand(1) - 0.5)), calc(100vh * (rand(1) - 0.5)), 0);
+    }
+  }
+
+  /* Fade-in and fade-out effect for particles */
+  .particle:nth-child(odd) {
+    animation: moveParticles 4s infinite ease-in-out;
+  }
+  .particle:nth-child(even) {
+    animation: moveParticles 4s infinite ease-in-out;
+    animation-delay: 2s;
+  }

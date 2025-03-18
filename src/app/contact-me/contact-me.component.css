@@ -1,0 +1,33 @@
+section {
+    padding: 100px 0;
+}
+.row {
+    max-width: 100%;
+    padding: 30px;
+}
+
+.gradient-line {
+    display: inline-block;
+    position: relative;
+    font-size: 36px; /* Adjust the font size */
+  }
+  
+  h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center text inside */
+    
+  }
+
+  .gradient-line::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Adjust the space between text and the line */
+    left: 50%; /* Center the line horizontally */
+    transform: translateX(-50%); /* Ensure proper centering by adjusting the line */
+    width: 20%; /* Make the line span the full width of the text */
+    height: 1px; /* Height of the gradient line */
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient colors */
+  }
