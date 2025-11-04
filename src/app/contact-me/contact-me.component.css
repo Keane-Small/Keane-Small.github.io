@@ -1,33 +1,260 @@
-section {
-    padding: 100px 0;
-}
-.row {
-    max-width: 100%;
-    padding: 30px;
+﻿.contact-section {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  background: var(--color-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.6s ease-out;
 }
 
-.gradient-line {
-    display: inline-block;
-    position: relative;
-    font-size: 36px; /* Adjust the font size */
+.contact-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 4rem;
+  letter-spacing: -0.02em;
+  animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  animation: fadeIn 1s ease-out 0.2s backwards;
+}
+
+.contact-card {
+  background: var(--color-bg-card);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: backwards;
+}
+
+.contact-card:nth-child(1) { animation-delay: 0.1s; }
+.contact-card:nth-child(2) { animation-delay: 0.2s; }
+.contact-card:nth-child(3) { animation-delay: 0.3s; }
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-icon i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover .contact-icon {
+  background: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+}
+
+.contact-card:hover .contact-icon i {
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-card:hover h3 {
+  color: var(--color-primary);
+}
+
+.contact-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-primary);
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
+.contact-text {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards;
+}
+
+.social-link {
+  width: 60px;
+  height: 60px;
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-primary), rgba(255, 107, 53, 0.7));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-link i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.social-link:hover::before {
+  opacity: 1;
+}
+
+.social-link:hover i {
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.footer-text {
+  animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+.footer-text p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  h1 {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; /* Center text inside */
-    
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 6rem 1rem 3rem;
   }
 
-  .gradient-line::after {
-    content: '';
-    position: absolute;
-    bottom: -15px; /* Adjust the space between text and the line */
-    left: 50%; /* Center the line horizontally */
-    transform: translateX(-50%); /* Ensure proper centering by adjusting the line */
-    width: 20%; /* Make the line span the full width of the text */
-    height: 1px; /* Height of the gradient line */
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient colors */
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-link {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
