@@ -1,0 +1,22 @@
+
+<section id="aboutMe" class="section" #aboutMe>
+<div class="row justify-content-center ">
+  <div class="curved-box col-sm-5  space-between mt-6">
+    <h3>Hi,  <span class="gradient-text">I'm</span></h3>
+    <h1 class="gradient-text">Keane Small</h1>
+    <p>As a passionate and detail-oriented web developer, I specialize in front-end and back-end development. I create intuitive and dynamic websites that provide a seamless user experience, while also ensuring robust server-side functionality. With a strong foundation in HTML, CSS, JavaScript, and various frameworks, as well as backend technologies like Node.js and Databases (SQL/NoSQL), I’m driven by a problem-solving mindset and love tackling challenges on both ends of development. Whether it's optimizing site performance, implementing creative features, or building scalable backend systems, I’m always eager to learn and stay updated with industry trends.
+      Also, coding is just FUN!</p>
+      <a href="../../assets/Keane Eric Small Resume.pdf" class="button" target="_blank">
+        <i class="bi bi-download"></i> Download PDF
+    </a>
+  </div>
+
+  <div class="col-md-4 d-flex justify-content-center">
+    <div class="profile-circle">      
+      <img src="../../assets/profile-pic.png" alt="Profile Picture">
+    </div>
+  </div>
+</div>
+</section>
+
+    
